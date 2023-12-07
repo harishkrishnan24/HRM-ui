@@ -1,5 +1,12 @@
+import { AppRoutes } from "@/routes";
+import { AppProvider } from "@/providers/app";
+
 function App() {
-  return <div>HRM</div>;
+  return (
+    <AppProvider>
+      <AppRoutes />
+    </AppProvider>
+  );
 }
 
 export default App;
