@@ -1,4 +1,4 @@
-import { THEMES } from "@/constants";
+import { THEMES } from "@/constants/themes";
 import { Sun, Moon } from "lucide-react";
 import { useEffect, useState } from "react";
 

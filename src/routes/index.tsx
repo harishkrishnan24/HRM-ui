@@ -1,11 +1,18 @@
-import { useRoutes } from "react-router-dom";
+import { lazyImport } from "@/utils/lazyImport";
+import { useRoutes, Navigate } from "react-router-dom";
+
+const { PropertyRoutes } = lazyImport(
+  () => import("@/features/property"),
+  "PropertyRoutes"
+);
 
 export const AppRoutes = () => {
   const element = useRoutes([
     {
-      path: "/",
-      element: <div>HRM</div>,
+      path: "/property/*",
+      element: <PropertyRoutes />,
     },
+    { path: "/", element: <Navigate to="/property" /> },
   ]);
 
   return element;
